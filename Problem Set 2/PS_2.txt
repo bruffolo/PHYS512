@@ -35,7 +35,8 @@ A =  0.2619032617669389
 tau =  62.973005591592646
 b =  0.9998038547032884
 
-The resulting fit, superimposed with the data and with the fit resulting from the initial guess paramters can be plotted by running the Q2.py script. The plot is also saved as Q2_a_b.png.
+The resulting fit, superimposed with the data and with the fit resulting from the initial guess paramters can be
+plotted by running the Q2.py script. The plot is also saved as Q2_a_b.png.
 
 c)
 
