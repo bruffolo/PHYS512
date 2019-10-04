@@ -3,6 +3,7 @@ Taking 8 terms for the truncated Chebyshev series (fitted by least squares) we c
 the [0.5,1] region better than 1e-6.
 A least squares fit of the standard polynomials of order 8 gives residuals almost exactly matching the
 Chebyshev fit. In this small region, and at this low order, the two fits are approximately equivalent.  
+The plot of the log2(x) fits are in the "log2(x).png" file.
 
 b)
 Using numpy.frexp() we can express any positive input x as x = y1*2**(y2),
@@ -34,8 +35,7 @@ A =  0.2619032617669389
 tau =  62.973005591592646
 b =  0.9998038547032884
 
-The resulting fit, superimposed with the data and with the fit resulting from the initial guess paramters can 
-are plotted by running the Q2.py script.
+The resulting fit, superimposed with the data and with the fit resulting from the initial guess paramters can be plotted by running the Q2.py script. The plot is also saved as Q2_a_b.png.
 
 c)
 
