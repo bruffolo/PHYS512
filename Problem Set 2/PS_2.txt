@@ -1,0 +1,42 @@
+1.a) 
+Taking 8 terms for the truncated Chebyshev series (fitted by least squares) we can get an accuracy in
+the [0.5,1] region better than 1e-6.
+A least squares fit of the standard polynomials of order 8 gives residuals almost exactly matching the
+Chebyshev fit. In this small region, and at this low order, the two fits are approximately equivalent.  
+
+b)
+Using numpy.frexp() we can express any positive input x as x = y1*2**(y2),
+where y1 is a positive number in the interval [0,1].
+
+Therefore log2(x) = y2 + log2(y1),
+where log2(y1) can be calculated with the chebyshev series used in 1.(a).
+
+2.a)
+The flare is modelled as an exponential decay starting sharply at some time. This time (denoted t_spike) 
+is taken from the data as the time when the flux jumps to its maximum value.
+
+The model is:
+
+model(t,A,tau,b) = b                {if (t-t_spike) < 0 }
+                 = A*exp(-t*tau) +b {if (t-t_spike) >= 0}
+Where b is is physcially the background flux before and long after the spike,  A is the amplitude of the spike
+and tau is the "decay rate" of the spike.
+
+As an initial guess we can take b,  as 1. While on average
+the background flux is 1, it has some small oscillation about this value that cannot be captured by our simple
+"constant background" model.
+As an initial guess for A, we can take the maximum recorded flux in the dataset.
+And, as an inital decay rate we can chose something that visually matches the data, we can choose tau = 50.
+
+b) 
+The resulting best fit parameters of the model, as obtained by Newton's method, are: 
+A =  0.2619032617669389
+tau =  62.973005591592646
+b =  0.9998038547032884
+
+The resulting fit, superimposed with the data and with the fit resulting from the initial guess paramters can 
+are plotted by running the Q2.py script.
+
+c)
+
+
