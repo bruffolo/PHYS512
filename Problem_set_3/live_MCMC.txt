@@ -1,0 +1,1026 @@
+Iteration 0:
+
+ΔΧ^2 = 5.829142
+Step not accepted.
+
+Currently on step 0 out of 1000.
+Current acceptance rate = 0.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 1:
+
+ΔΧ^2 = -69.064545
+Step accepted!
+
+Currently on step 1 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 2:
+
+ΔΧ^2 = -8.840383
+Step accepted!
+
+Currently on step 2 out of 1000.
+Current acceptance rate = 66.67 %
+
+----------------------------------------------------------------------------------------------
+Iteration 3:
+
+ΔΧ^2 = 99.698739
+Step not accepted.
+
+Currently on step 2 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 4:
+
+ΔΧ^2 = 193.555705
+Step not accepted.
+
+Currently on step 2 out of 1000.
+Current acceptance rate = 40.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 5:
+
+ΔΧ^2 = -65.806213
+Step accepted!
+
+Currently on step 3 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 6:
+
+ΔΧ^2 = -38.065777
+Step accepted!
+
+Currently on step 4 out of 1000.
+Current acceptance rate = 57.14 %
+
+----------------------------------------------------------------------------------------------
+Iteration 7:
+
+ΔΧ^2 = -56.660572
+Step accepted!
+
+Currently on step 5 out of 1000.
+Current acceptance rate = 62.50 %
+
+----------------------------------------------------------------------------------------------
+Iteration 8:
+
+ΔΧ^2 = 32.645273
+Step not accepted.
+
+Currently on step 5 out of 1000.
+Current acceptance rate = 55.56 %
+
+----------------------------------------------------------------------------------------------
+Iteration 9:
+
+ΔΧ^2 = 54.008684
+Step not accepted.
+
+Currently on step 5 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 10:
+
+ΔΧ^2 = 13.118236
+Step not accepted.
+
+Currently on step 5 out of 1000.
+Current acceptance rate = 45.45 %
+
+----------------------------------------------------------------------------------------------
+Iteration 11:
+
+ΔΧ^2 = -28.641374
+Step accepted!
+
+Currently on step 6 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 12:
+
+ΔΧ^2 = 1.466395
+Step not accepted.
+
+Currently on step 6 out of 1000.
+Current acceptance rate = 46.15 %
+
+----------------------------------------------------------------------------------------------
+Iteration 13:
+
+ΔΧ^2 = -12.143277
+Step accepted!
+
+Currently on step 7 out of 1000.
+Current acceptance rate = 50.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 14:
+
+ΔΧ^2 = 13.602352
+Step not accepted.
+
+Currently on step 7 out of 1000.
+Current acceptance rate = 46.67 %
+
+----------------------------------------------------------------------------------------------
+Iteration 15:
+
+ΔΧ^2 = 57.109354
+Step not accepted.
+
+Currently on step 7 out of 1000.
+Current acceptance rate = 43.75 %
+
+----------------------------------------------------------------------------------------------
+Iteration 16:
+
+ΔΧ^2 = 2.026994
+Step not accepted.
+
+Currently on step 7 out of 1000.
+Current acceptance rate = 41.18 %
+
+----------------------------------------------------------------------------------------------
+Iteration 17:
+
+ΔΧ^2 = -6.471199
+Step accepted!
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 44.44 %
+
+----------------------------------------------------------------------------------------------
+Iteration 18:
+
+ΔΧ^2 = 5.222573
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 42.11 %
+
+----------------------------------------------------------------------------------------------
+Iteration 19:
+
+ΔΧ^2 = 13.644828
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 40.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 20:
+
+ΔΧ^2 = 6.554297
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 38.10 %
+
+----------------------------------------------------------------------------------------------
+Iteration 21:
+
+ΔΧ^2 = 12.807937
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 36.36 %
+
+----------------------------------------------------------------------------------------------
+Iteration 22:
+
+ΔΧ^2 = 13.769277
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 34.78 %
+
+----------------------------------------------------------------------------------------------
+Iteration 23:
+
+ΔΧ^2 = 2.549280
+Step not accepted.
+
+Currently on step 8 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 24:
+
+ΔΧ^2 = -10.397605
+Step accepted!
+
+Currently on step 9 out of 1000.
+Current acceptance rate = 36.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 25:
+
+ΔΧ^2 = 46.995734
+Step not accepted.
+
+Currently on step 9 out of 1000.
+Current acceptance rate = 34.62 %
+
+----------------------------------------------------------------------------------------------
+Iteration 26:
+
+ΔΧ^2 = 11.275024
+Step not accepted.
+
+Currently on step 9 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 27:
+
+ΔΧ^2 = -2.386119
+Step accepted!
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 35.71 %
+
+----------------------------------------------------------------------------------------------
+Iteration 28:
+
+ΔΧ^2 = 4.458963
+Step not accepted.
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 34.48 %
+
+----------------------------------------------------------------------------------------------
+Iteration 29:
+
+ΔΧ^2 = 23.411891
+Step not accepted.
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 30:
+
+ΔΧ^2 = 5.284545
+Step not accepted.
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 32.26 %
+
+----------------------------------------------------------------------------------------------
+Iteration 31:
+
+ΔΧ^2 = 8.889429
+Step not accepted.
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 31.25 %
+
+----------------------------------------------------------------------------------------------
+Iteration 32:
+
+ΔΧ^2 = 6.211615
+Step not accepted.
+
+Currently on step 10 out of 1000.
+Current acceptance rate = 30.30 %
+
+----------------------------------------------------------------------------------------------
+Iteration 33:
+
+ΔΧ^2 = -0.029332
+Step accepted!
+
+Currently on step 11 out of 1000.
+Current acceptance rate = 32.35 %
+
+----------------------------------------------------------------------------------------------
+Iteration 34:
+
+ΔΧ^2 = 30.309708
+Step not accepted.
+
+Currently on step 11 out of 1000.
+Current acceptance rate = 31.43 %
+
+----------------------------------------------------------------------------------------------
+Iteration 35:
+
+ΔΧ^2 = 2.596248
+Step not accepted.
+
+Currently on step 11 out of 1000.
+Current acceptance rate = 30.56 %
+
+----------------------------------------------------------------------------------------------
+Iteration 36:
+
+ΔΧ^2 = -0.439761
+Step accepted!
+
+Currently on step 12 out of 1000.
+Current acceptance rate = 32.43 %
+
+----------------------------------------------------------------------------------------------
+Iteration 37:
+
+ΔΧ^2 = -2.694240
+Step accepted!
+
+Currently on step 13 out of 1000.
+Current acceptance rate = 34.21 %
+
+----------------------------------------------------------------------------------------------
+Iteration 38:
+
+ΔΧ^2 = -0.116320
+Step accepted!
+
+Currently on step 14 out of 1000.
+Current acceptance rate = 35.90 %
+
+----------------------------------------------------------------------------------------------
+Iteration 39:
+
+ΔΧ^2 = -4.779651
+Step accepted!
+
+Currently on step 15 out of 1000.
+Current acceptance rate = 37.50 %
+
+----------------------------------------------------------------------------------------------
+Iteration 40:
+
+ΔΧ^2 = 7.705847
+Step not accepted.
+
+Currently on step 15 out of 1000.
+Current acceptance rate = 36.59 %
+
+----------------------------------------------------------------------------------------------
+Iteration 41:
+
+ΔΧ^2 = 25.329097
+Step not accepted.
+
+Currently on step 15 out of 1000.
+Current acceptance rate = 35.71 %
+
+----------------------------------------------------------------------------------------------
+Iteration 42:
+
+ΔΧ^2 = -1.886787
+Step accepted!
+
+Currently on step 16 out of 1000.
+Current acceptance rate = 37.21 %
+
+----------------------------------------------------------------------------------------------
+Iteration 43:
+
+ΔΧ^2 = 3.020947
+Step accepted!
+
+Currently on step 17 out of 1000.
+Current acceptance rate = 38.64 %
+
+----------------------------------------------------------------------------------------------
+Iteration 44:
+
+ΔΧ^2 = 30.779549
+Step not accepted.
+
+Currently on step 17 out of 1000.
+Current acceptance rate = 37.78 %
+
+----------------------------------------------------------------------------------------------
+Iteration 45:
+
+ΔΧ^2 = -2.872331
+Step accepted!
+
+Currently on step 18 out of 1000.
+Current acceptance rate = 39.13 %
+
+----------------------------------------------------------------------------------------------
+Iteration 46:
+
+ΔΧ^2 = 58.263772
+Step not accepted.
+
+Currently on step 18 out of 1000.
+Current acceptance rate = 38.30 %
+
+----------------------------------------------------------------------------------------------
+Iteration 47:
+
+ΔΧ^2 = -0.741813
+Step accepted!
+
+Currently on step 19 out of 1000.
+Current acceptance rate = 39.58 %
+
+----------------------------------------------------------------------------------------------
+Iteration 48:
+
+ΔΧ^2 = -2.077800
+Step accepted!
+
+Currently on step 20 out of 1000.
+Current acceptance rate = 40.82 %
+
+----------------------------------------------------------------------------------------------
+Iteration 49:
+
+ΔΧ^2 = 46.951118
+Step not accepted.
+
+Currently on step 20 out of 1000.
+Current acceptance rate = 40.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 50:
+
+ΔΧ^2 = -3.337729
+Step accepted!
+
+Currently on step 21 out of 1000.
+Current acceptance rate = 41.18 %
+
+----------------------------------------------------------------------------------------------
+Iteration 51:
+
+ΔΧ^2 = 62.681177
+Step not accepted.
+
+Currently on step 21 out of 1000.
+Current acceptance rate = 40.38 %
+
+----------------------------------------------------------------------------------------------
+Iteration 52:
+
+ΔΧ^2 = 6.408072
+Step not accepted.
+
+Currently on step 21 out of 1000.
+Current acceptance rate = 39.62 %
+
+----------------------------------------------------------------------------------------------
+Iteration 53:
+
+ΔΧ^2 = -0.569919
+Step accepted!
+
+Currently on step 22 out of 1000.
+Current acceptance rate = 40.74 %
+
+----------------------------------------------------------------------------------------------
+Iteration 54:
+
+ΔΧ^2 = -4.722015
+Step accepted!
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 41.82 %
+
+----------------------------------------------------------------------------------------------
+Iteration 55:
+
+ΔΧ^2 = 7.218840
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 41.07 %
+
+----------------------------------------------------------------------------------------------
+Iteration 56:
+
+ΔΧ^2 = 4.240074
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 40.35 %
+
+----------------------------------------------------------------------------------------------
+Iteration 57:
+
+ΔΧ^2 = 7.001212
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 39.66 %
+
+----------------------------------------------------------------------------------------------
+Iteration 58:
+
+ΔΧ^2 = 8.153159
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 38.98 %
+
+----------------------------------------------------------------------------------------------
+Iteration 59:
+
+ΔΧ^2 = 8.603011
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 38.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 60:
+
+ΔΧ^2 = 3.832261
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 37.70 %
+
+----------------------------------------------------------------------------------------------
+Iteration 61:
+
+ΔΧ^2 = 13.522832
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 37.10 %
+
+----------------------------------------------------------------------------------------------
+Iteration 62:
+
+ΔΧ^2 = 17.618526
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 36.51 %
+
+----------------------------------------------------------------------------------------------
+Iteration 63:
+
+ΔΧ^2 = 10.508358
+Step not accepted.
+
+Currently on step 23 out of 1000.
+Current acceptance rate = 35.94 %
+
+----------------------------------------------------------------------------------------------
+Iteration 64:
+
+ΔΧ^2 = -1.288649
+Step accepted!
+
+Currently on step 24 out of 1000.
+Current acceptance rate = 36.92 %
+
+----------------------------------------------------------------------------------------------
+Iteration 65:
+
+ΔΧ^2 = -1.796211
+Step accepted!
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 37.88 %
+
+----------------------------------------------------------------------------------------------
+Iteration 66:
+
+ΔΧ^2 = 3.067477
+Step not accepted.
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 37.31 %
+
+----------------------------------------------------------------------------------------------
+Iteration 67:
+
+ΔΧ^2 = 10.104813
+Step not accepted.
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 36.76 %
+
+----------------------------------------------------------------------------------------------
+Iteration 68:
+
+ΔΧ^2 = 5.963922
+Step not accepted.
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 36.23 %
+
+----------------------------------------------------------------------------------------------
+Iteration 69:
+
+ΔΧ^2 = 46.460839
+Step not accepted.
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 35.71 %
+
+----------------------------------------------------------------------------------------------
+Iteration 70:
+
+ΔΧ^2 = 14.020701
+Step not accepted.
+
+Currently on step 25 out of 1000.
+Current acceptance rate = 35.21 %
+
+----------------------------------------------------------------------------------------------
+Iteration 71:
+
+ΔΧ^2 = -0.640126
+Step accepted!
+
+Currently on step 26 out of 1000.
+Current acceptance rate = 36.11 %
+
+----------------------------------------------------------------------------------------------
+Iteration 72:
+
+ΔΧ^2 = 27.328091
+Step not accepted.
+
+Currently on step 26 out of 1000.
+Current acceptance rate = 35.62 %
+
+----------------------------------------------------------------------------------------------
+Iteration 73:
+
+ΔΧ^2 = -1.081897
+Step accepted!
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 36.49 %
+
+----------------------------------------------------------------------------------------------
+Iteration 74:
+
+ΔΧ^2 = 4.668963
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 36.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 75:
+
+ΔΧ^2 = 23.361456
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 35.53 %
+
+----------------------------------------------------------------------------------------------
+Iteration 76:
+
+ΔΧ^2 = 4.154998
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 35.06 %
+
+----------------------------------------------------------------------------------------------
+Iteration 77:
+
+ΔΧ^2 = 14.126695
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 34.62 %
+
+----------------------------------------------------------------------------------------------
+Iteration 78:
+
+ΔΧ^2 = 4.299224
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 34.18 %
+
+----------------------------------------------------------------------------------------------
+Iteration 79:
+
+ΔΧ^2 = 13.218695
+Step not accepted.
+
+Currently on step 27 out of 1000.
+Current acceptance rate = 33.75 %
+
+----------------------------------------------------------------------------------------------
+Iteration 80:
+
+ΔΧ^2 = -6.575510
+Step accepted!
+
+Currently on step 28 out of 1000.
+Current acceptance rate = 34.57 %
+
+----------------------------------------------------------------------------------------------
+Iteration 81:
+
+ΔΧ^2 = 40.631387
+Step not accepted.
+
+Currently on step 28 out of 1000.
+Current acceptance rate = 34.15 %
+
+----------------------------------------------------------------------------------------------
+Iteration 82:
+
+ΔΧ^2 = -1.054982
+Step accepted!
+
+Currently on step 29 out of 1000.
+Current acceptance rate = 34.94 %
+
+----------------------------------------------------------------------------------------------
+Iteration 83:
+
+ΔΧ^2 = 5.457222
+Step not accepted.
+
+Currently on step 29 out of 1000.
+Current acceptance rate = 34.52 %
+
+----------------------------------------------------------------------------------------------
+Iteration 84:
+
+ΔΧ^2 = 0.143848
+Step accepted!
+
+Currently on step 30 out of 1000.
+Current acceptance rate = 35.29 %
+
+----------------------------------------------------------------------------------------------
+Iteration 85:
+
+ΔΧ^2 = 2.309487
+Step not accepted.
+
+Currently on step 30 out of 1000.
+Current acceptance rate = 34.88 %
+
+----------------------------------------------------------------------------------------------
+Iteration 86:
+
+ΔΧ^2 = 27.636585
+Step not accepted.
+
+Currently on step 30 out of 1000.
+Current acceptance rate = 34.48 %
+
+----------------------------------------------------------------------------------------------
+Iteration 87:
+
+ΔΧ^2 = 3.683698
+Step not accepted.
+
+Currently on step 30 out of 1000.
+Current acceptance rate = 34.09 %
+
+----------------------------------------------------------------------------------------------
+Iteration 88:
+
+ΔΧ^2 = -1.555423
+Step accepted!
+
+Currently on step 31 out of 1000.
+Current acceptance rate = 34.83 %
+
+----------------------------------------------------------------------------------------------
+Iteration 89:
+
+ΔΧ^2 = 0.151010
+Step accepted!
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 35.56 %
+
+----------------------------------------------------------------------------------------------
+Iteration 90:
+
+ΔΧ^2 = 7.348624
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 35.16 %
+
+----------------------------------------------------------------------------------------------
+Iteration 91:
+
+ΔΧ^2 = 12.817428
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 34.78 %
+
+----------------------------------------------------------------------------------------------
+Iteration 92:
+
+ΔΧ^2 = 6.179542
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 34.41 %
+
+----------------------------------------------------------------------------------------------
+Iteration 93:
+
+ΔΧ^2 = 4.890404
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 34.04 %
+
+----------------------------------------------------------------------------------------------
+Iteration 94:
+
+ΔΧ^2 = 12.325448
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 33.68 %
+
+----------------------------------------------------------------------------------------------
+Iteration 95:
+
+ΔΧ^2 = 8.131698
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 96:
+
+ΔΧ^2 = 41.439687
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 32.99 %
+
+----------------------------------------------------------------------------------------------
+Iteration 97:
+
+ΔΧ^2 = 41.165339
+Step not accepted.
+
+Currently on step 32 out of 1000.
+Current acceptance rate = 32.65 %
+
+----------------------------------------------------------------------------------------------
+Iteration 98:
+
+ΔΧ^2 = -0.399117
+Step accepted!
+
+Currently on step 33 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 99:
+
+ΔΧ^2 = -0.168572
+Step accepted!
+
+Currently on step 34 out of 1000.
+Current acceptance rate = 34.00 %
+
+----------------------------------------------------------------------------------------------
+Iteration 100:
+
+ΔΧ^2 = -0.671232
+Step accepted!
+
+Currently on step 35 out of 1000.
+Current acceptance rate = 34.65 %
+
+----------------------------------------------------------------------------------------------
+Iteration 101:
+
+ΔΧ^2 = 7.989445
+Step not accepted.
+
+Currently on step 35 out of 1000.
+Current acceptance rate = 34.31 %
+
+----------------------------------------------------------------------------------------------
+Iteration 102:
+
+ΔΧ^2 = -1.016500
+Step accepted!
+
+Currently on step 36 out of 1000.
+Current acceptance rate = 34.95 %
+
+----------------------------------------------------------------------------------------------
+Iteration 103:
+
+ΔΧ^2 = 18.242136
+Step not accepted.
+
+Currently on step 36 out of 1000.
+Current acceptance rate = 34.62 %
+
+----------------------------------------------------------------------------------------------
+Iteration 104:
+
+ΔΧ^2 = 1.025300
+Step not accepted.
+
+Currently on step 36 out of 1000.
+Current acceptance rate = 34.29 %
+
+----------------------------------------------------------------------------------------------
+Iteration 105:
+
+ΔΧ^2 = -1.179075
+Step accepted!
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 34.91 %
+
+----------------------------------------------------------------------------------------------
+Iteration 106:
+
+ΔΧ^2 = 2.830091
+Step not accepted.
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 34.58 %
+
+----------------------------------------------------------------------------------------------
+Iteration 107:
+
+ΔΧ^2 = 12.341650
+Step not accepted.
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 34.26 %
+
+----------------------------------------------------------------------------------------------
+Iteration 108:
+
+ΔΧ^2 = 38.357721
+Step not accepted.
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 33.94 %
+
+----------------------------------------------------------------------------------------------
+Iteration 109:
+
+ΔΧ^2 = 7.653288
+Step not accepted.
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 33.64 %
+
+----------------------------------------------------------------------------------------------
+Iteration 110:
+
+ΔΧ^2 = 18.236504
+Step not accepted.
+
+Currently on step 37 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
+Iteration 111:
+
+ΔΧ^2 = -3.423046
+Step accepted!
+
+Currently on step 38 out of 1000.
+Current acceptance rate = 33.93 %
+
+----------------------------------------------------------------------------------------------
+Iteration 112:
+
+ΔΧ^2 = 10.770766
+Step not accepted.
+
+Currently on step 38 out of 1000.
+Current acceptance rate = 33.63 %
+
+----------------------------------------------------------------------------------------------
+Iteration 113:
+
+ΔΧ^2 = 4.773272
+Step not accepted.
+
+Currently on step 38 out of 1000.
+Current acceptance rate = 33.33 %
+
+----------------------------------------------------------------------------------------------
