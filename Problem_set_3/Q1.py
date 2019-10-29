@@ -68,4 +68,5 @@ print("chi^2 = %f"%(chisq))
 # Setup the plot
 plt.xlim(0)
 plt.legend()
+plt.savefig("Q1.png")
 plt.show()
