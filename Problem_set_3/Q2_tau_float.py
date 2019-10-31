@@ -66,8 +66,8 @@ plt.plot(x,y,'o', markersize = 4)
 # Calculate the chisquare and step for the initial guess.
 
 # Calculate and plot the initial guess 
-#pred,grad = calc_grad(p,x)
-#plt.plot(x,pred,label = "Initial guess")
+pred,grad = calc_grad(p)
+plt.plot(x,pred,label = "Initial guess")
 print()
 
 # Gauss-Newton/Levenberg-Marquardt loop initialization.

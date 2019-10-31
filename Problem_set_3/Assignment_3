@@ -7,12 +7,11 @@ H0,ombh2,omch2,As,ns = [65,0.02,0.1,0.05,2e-9,0.96].
 
 2. 
 
-A Levenberg–Marquardt algorithm was implimented[1] for the optimization. Iterations are terminated when 
-Δχ^2 < 0.001.
+A Levenberg–Marquardt algorithm was implimented[1] for the optimization.
 
 An initial (poor!) guess for the parameters is H0,ombh2,omch2,As,ns = [45,0.04,0.1,2e-9,.86].
 
-With tau fixed to 0.05, the algorithim rapidly converges (X iterations) to a set of
+With tau fixed to 0.05, the algorithim rapidly converges (5 iterations) to a set of
 optimized parameters
 
 H0,ombh2,omch2,As,ns =  [7.35010627e+01, 2.30453233e-02, 1.06343370e-01, 1.99999999e-09, 9.86700540e-01],
