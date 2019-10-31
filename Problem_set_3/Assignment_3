@@ -1,0 +1,54 @@
+1.
+
+The chisquare is 1588.237647 using the parameter set
+H0,ombh2,omch2,As,ns = [65,0.02,0.1,0.05,2e-9,0.96].
+
+-----------------------------------------------------------------------------------------------------------------------
+
+2. 
+
+A Levenberg–Marquardt algorithm was implimented[1] for the optimization. Iterations are terminated when 
+Δχ^2 < 0.001.
+
+An initial (poor!) guess for the parameters is H0,ombh2,omch2,As,ns = [45,0.04,0.1,2e-9,.86].
+
+With tau fixed to 0.05, the algorithim rapidly converges (X iterations) to a set of
+optimized parameters
+
+H0,ombh2,omch2,As,ns =  [7.35010627e+01, 2.30453233e-02, 1.06343370e-01, 1.99999999e-09, 9.86700540e-01],
+
+with standard error σ_p =  [2.56573752e+00, 5.70738998e-04, 5.06109734e-03, 3.78086349e-11, 1.43528890e-02], 
+
+and with a χ^2 of 1230.786851. The initial guess given to the algorithim is relatively poor to illustrate its ability 
+to rapidly reduce the chi square with each iteration. This is implemented in the Q2_tau_fixed.py file. A plot of the 
+final model CMB curve, along with the inital guess and the fit data can be found in the figure Q2_tau_fixed.png.
+
+Next, using the initial guess H0,ombh2,omch2,As,ns = [65,0.02,0.1,0.05,2e-9,.96] (the one provided in the assignment),
+with tau as floating parameter, the same algorithim implemented above results in the a set of optimized parameters
+
+H0,ombh2,omch2,As,ns = [6.94526745e+01, 2.24898637e-02, 1.13644508e-01, 3.99880420e-02, 2.00000000e-09, 9.69578263e-01],
+
+with standard error σ_p = [3.36453315e+00, 7.80021580e-04, 6.54101033e-03, 1.48069326e-01, 5.79225500e-10, 2.31643771e-02],
+
+and with a χ^2 of 1227.936821. This is implemented in the Q2_tau_float.py file. A plot of the final model CMB curve,
+along with the inital guess and the fit data can be found in the figure Q2_tau_float.png.
+
+As expected with more the extra fit parameter tau, an extra degree of freedom, we can further reduce the chisquare 
+of the fit. 
+
+
+[1] The specific algorithim used is based on the paper "The Levenberg-Marquardt algorithm for
+nonlinear least squares curve-fitting problems" by Henri P. Gavin. 
+
+Specifically implemented from this resource is a test metric to determine the validity of a given step dp,
+as well as proper ways in which to increase/decrease λ after a step is accepted/rejected.
+For this alogirthim λ0 was set to 1e-2.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+3.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+4.
