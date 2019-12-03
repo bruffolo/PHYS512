@@ -1,0 +1,44 @@
+See the Jupyter notebook "Potential.ipynb" for problems 1-4.
+
+For time/iteration count comparison of the relaxation/conjugate gradient/
+variable resolution conjugate gradient methods we use a 1024X1024 pixel density
+and cylinder of radius 128.
+
+Potential colormaps, Electric field magnitude colormaps and vector field plots, with comparison 
+to the approximate analytic solution to this problem are plotted in the Jupyter Notebook and seperately 
+included as PNG files.
+
+
+2)
+ The convergence criterea for both the relaxation and conjugate gradient solvers is for the 
+ maximum difference between two subsequently calculated maps of the potential to be below some 
+ tolerence.
+
+ Here the tolerance is chosen to be 1e-6.
+ This results in a required time of:
+    - 1691.41 seconds (28.19 minutes) or 149196 iterations (RELAXATION METHOD)
+    - 34.39 seconds or 1255 iterations (CONJUGATE GRADIENT METHOD)
+Conjugate gradient is much (~120X) faster.
+
+3)
+    The variable resolution conjugate gradient takes 15.04 seconds compared to the 34.39 seconds
+    required for the direct conjugate gradient method (~2-3X faster in general). 
+
+4)
+    A sharp increase in the magnitude of the electric field can be seen on the small diameter 
+    pertubation on the wire. This occurs because of a large build up of charge in this region.
+
+    The ratio of the electric field magnitude near the bump vs. the surface of the wire away 
+    from the bump is $\approx$ 3-4 (as can be seen from the figure).
+
+5)
+    The stability criterion for the 2D heat equation is:
+
+       D <= Δx^2/(4Δt) 
+
+    (from Von Neumann stability analysis).
+    Any choice of D, Δx and Δt satisfying the above should result in numerically stable equation 
+    that can be solved using the method of relaxation.
+
+    See the Jupyter notebook "Problem 5.ipynb".
+
