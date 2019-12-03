@@ -38,7 +38,16 @@ Conjugate gradient is much (~120X) faster.
 
     (from Von Neumann stability analysis).
     Any choice of D, Δx and Δt satisfying the above should result in numerically stable equation 
-    that can be solved using the method of relaxation.
+    that can be solved numerically using the method of relaxation. I set D = 1/8.
 
-    See the Jupyter notebook "Problem 5.ipynb".
+    The temperature is ramped linearly on the left hand side of the box.
+    Neumann boundary conditions are implemented on the other sides of the box, restricting heatflow out 
+    of the box. 
+
+    See the Jupyter notebook "Problem 5.ipynb". Two interactive plots were made. One of the 
+    temperature of the box everywhere (as a color map) as a function of time (selectable by user).
+    The other of the temperature (at all times) at any distance (selectable by user) along the line 
+    from the center of the heated side of the box to the center of the opposite side.
+
+    
 
