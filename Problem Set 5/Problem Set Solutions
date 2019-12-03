@@ -4,14 +4,16 @@ For time/iteration count comparison of the relaxation/conjugate gradient/
 variable resolution conjugate gradient methods we use a 1024X1024 pixel density
 and cylinder of radius 128.
 
-Potential colormaps, Electric field magnitude colormaps and vector field plots, charge distributions,
-and with comparison to the approximate analytic solution to this problem are plotted in the 
+Electric potential colormaps, Electric field magnitude colormaps with superimposed vector field plots, 
+charge distributions, and comparison plots to the approximate analytic solution are plotted in the 
 Jupyter Notebook and seperately included as PNG files.
 
 1) 
     Charge accumulates on the wire surface (the wire and grounded box surrounding it form a capacitor).
     The total charge on the circular cross section of the wire, in the 2D sense, 
     is charge per unit length of the wire(in z), in the 3D sense.
+
+    The calculated solution is in good agreement with the approximate analytic solution.
 
 2)
     The convergence criterea for both the relaxation and conjugate gradient solvers is for the 
