@@ -11,7 +11,7 @@ Jupyter Notebook and seperately included as PNG files.
 1) 
     Charge accumulates on the wire surface (the wire and grounded box surrounding it form a capacitor).
     The total charge on the circular cross section of the wire, in the 2D sense, 
-    is charge per unit length of the wire(in z), in the 3D sense.
+    is charge per unit length of the wire(in z), in the 3D sense. See Jupyter notebook.
 
     The calculated solution is in good agreement with the approximate analytic solution.
 
