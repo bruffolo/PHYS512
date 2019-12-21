@@ -79,4 +79,9 @@ The Orbit_Animator.py program does a similar job as the above animator, but with
 or 
 ```python Orbit_Animation.py complex```
 
-to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. The animations look like the following:
+to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. 
+
+
+2) The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py simple``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py ```.
+
+3) Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the parameters of your choice for grid size, dt, and the number of particles. You can have the code do live animation during the computation by setting ```show3D = True``` in the code. Note that for live plotting to not significantly slow down the code, you could set ```nth = npt/1000```, and set ```plt_iter = 10```. These commands control the number of particles that are live plotted (every "nth" particle is plotted) and how many iterations of the integrator are performed before the plot is updated., 
