@@ -15,7 +15,7 @@ A C library "C_methods.c" is called by the above code using c_types in python. T
 in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
 
 ### Simulation Configuration
-To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated.py, and scroll down to system configuration. Here you can input the number of particles, as well as the grid size and number of iterations and time step of the integration loop.
+To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated.py, and scroll down to the system configuration. Here you can input the number of particles, as well as the grid size and number of iterations and time step of the integration loop.
 
 ```
 npix = 2**6        # Pixel number
@@ -41,6 +41,18 @@ Adding the switch -b as a command line argument when calling the above will prin
 The speed of each component of the alogorithim can be determined by setting
 ```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
 
+For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode returns:
+
+```
+####### Benchmarks #######
+Grid snap calc. time:  0.001196146011352539
+FFT calc. time:  0.09336996078491211
+Gradient Calc. time:  0.025470256805419922
+Integration time:  0.01964592933654785
+Grid reset time:  0.0026929378509521484
+```
+Showing that the fft is largely the time limiting component of the calculation.
+
 ### Results and Animations
 
 The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
@@ -49,7 +61,7 @@ The Animation.py program is written to animate (really just rapidly plot) the ou
 or 
 ```python Animation.py periodic```
 
-to see an animation of an nbody simulation with 100,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 64X64X64. For better handling of the figure only every 100 particles of the 100,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
+to see an animation of an nbody simulation with 300,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 64X64X64. For better handling of the figure only every 300 particles of the 300,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
 
 The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visulization of a circular orbit. You can run
 
