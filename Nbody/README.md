@@ -55,6 +55,9 @@ Grid reset time:  0.0026929378509521484
 ```
 Showing that the FFT is largely the time limiting component of the calculation.
 
+### Potential
+./Periodic_potential_map.png
+
 ### Results and Animations
 
 The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
