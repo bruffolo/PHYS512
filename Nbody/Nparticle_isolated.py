@@ -10,13 +10,12 @@ import sys
 # Pull necessary functions from companion C library
 c_lib = ctypes.cdll.LoadLibrary("PM_methods.so")
 
-# Get the methods for the periodic BC's
-to_grid_periodic = c_lib.to_grid_periodic
-to_grid_periodic.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_long, ctypes.c_long]
+# Get the methods for the isolated BC's
+to_grid = c_lib.to_grid
+to_grid.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_long, ctypes.c_long]
 
-handle_periodic_bc = c_lib.handle_periodic_bc
-handle_periodic_bc.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p,ctypes.c_long, ctypes.c_long]
-
+handle_isolated_boundaries = c_lib.handle_isolated_boundaries
+handle_isolated_boundaries.argtypes = [ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_long, ctypes.c_long]
 
 def to_grid_py(xy,grid,cell_loc):
     g_xy = np.asarray(np.round(xy),dtype='int')
@@ -26,7 +25,7 @@ def to_grid_py(xy,grid,cell_loc):
         cell_loc[i] = g_xy[i,0],g_xy[i,1],g_xy[i,2]
 
 # System Configuration
-npix = 2**7        # Pixel number
+npix = 2**6        # Pixel number
 npt  = 100000      # Number of particles
 ndim = 3           # Number of dimenesions
 
@@ -38,7 +37,7 @@ m_max = 1        # Maximum particle mass
 m_min = 0.4      # Mininmum particle mass
 
 # Number of iterations
-niter = 1000
+niter = 10000
 
 # Time step
 dt = 0.01
@@ -52,16 +51,16 @@ except(IndexError):
 # Plotting parameters (during simulation)
 show3D = True
 nth = 100        # Plot every nth particle on screen
-plt_iter = 5  # Plot particles every plt_iter iteration
+plt_iter = 5    # Plot particles every plt_iter iteration
 
 # Data saving parameters
 save_data = False
 save_iter = 10   # Save position particle data every save_iter iteration
 save_nth  = 100  # Save position particle data every save_nth particle
 
-x_file = "x.txt"
-y_file = "y.txt"
-z_file = "z.txt"
+x_file = "x_isolated.txt"
+y_file = "y_isolated.txt"
+z_file = "z_isolated.txt"
 
 # Benchmark mode
 benchmark = False
@@ -74,7 +73,6 @@ potential_test = False
 ########################################
 ###        Green's function          ###
 ########################################
-npix = npix//2
 green_func = np.zeros([2*npix+1,2*npix+1,2*npix+1])
 
 # Method to fill the Green's function array
@@ -109,8 +107,7 @@ green_ft = rfftn(green_func[:-1,:-1,:-1]) # Take the FT of Green's function arra
 
 #plt.imshow(green_func[:,:,0]);plt.colorbar();plt.show()
 
-npix = 2*npix
-grid = np.zeros([npix,npix,npix]) # Make the grid array
+grid = np.zeros([2*npix,2*npix,2*npix]) # Make the grid array
 
 
 ########################################
@@ -134,6 +131,11 @@ if(m_random):
 vx = np.zeros([npt])
 vy = np.zeros([npt])
 vz = np.zeros([npt])
+
+# Accelerations
+ax = np.zeros([npt])
+ay = np.zeros([npt])
+az = np.zeros([npt])
 
 # Starting positions
 x = np.random.rand(npt)*(npix-0.6)
@@ -184,9 +186,13 @@ lx = np.asarray(np.round(x),dtype='int')
 ly = np.asarray(np.round(y),dtype='int')
 lz = np.asarray(np.round(z),dtype='int')
 
+# This array will track out of bounds particles
+bc = np.zeros([npt],dtype = 'int')
+
 # Assign particles to the grid
-to_grid_periodic(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, npt, npix)
+to_grid(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data, m.ctypes.data, bc.ctypes.data, npt, npix)
 l = np.array([lx,ly,lz])
+
 
 # Potential calculation
 density_ft = rfftn(grid)
@@ -219,8 +225,13 @@ if(show3D):
 
 for t in range(niter):
     t11 = time.time()
+
+    lx = np.asarray(np.round(x),dtype='int')
+    ly = np.asarray(np.round(y),dtype='int')
+    lz = np.asarray(np.round(z),dtype='int')
+
     # Assign particles to the grid
-    to_grid_periodic(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, npt, npix)
+    to_grid(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, bc.ctypes.data, npt, npix)
 
     t2 = time.time()
     if(benchmark):print("Grid snap calc. time: ",t2-t11)
@@ -231,7 +242,6 @@ for t in range(niter):
 
     density_ft = rfftn(grid)
     potential = irfftn(density_ft*green_ft)
-
     t2 = time.time()
     if(benchmark):print("FFT calc. time: ",t2-t1)
 #-------------------------------------------------------------------------------------------------------------
@@ -251,9 +261,6 @@ for t in range(niter):
     y = y + vy*dt + (1/2)*ay_prev*dt**2
     z = z + vz*dt + (1/2)*az_prev*dt**2
 
-    # Handle particles encountering the boundary
-    handle_periodic_bc(x.ctypes.data, y.ctypes.data, z.ctypes.data, npt, npix)
-    
     # Save the position data
     if(save_data and t%save_iter == 0):
         x_save[t//save_iter] = x[::save_nth].copy()
@@ -263,11 +270,21 @@ for t in range(niter):
     lx = np.asarray(np.round(x),dtype='int')
     ly = np.asarray(np.round(y),dtype='int')
     lz = np.asarray(np.round(z),dtype='int')
+    
+    handle_isolated_boundaries(lx.ctypes.data,ly.ctypes.data,lz.ctypes.data,npt,npix)
     l = np.array([lx,ly,lz])
 
+    # Compute current acceleration
     ax = Fx[tuple(l)]/m
     ay = Fy[tuple(l)]/m
     az = Fz[tuple(l)]/m
+
+    # Handle particles outside the grid >>> they feel no force from the grid bound mass.
+    bc_flag = bc.astype(bool)
+
+    ax[bc_flag] = 0
+    ay[bc_flag] = 0
+    az[bc_flag] = 0
 
     # Update velocities
     vx = vx + (1/2)*( ax_prev + ax )*dt
@@ -281,8 +298,7 @@ for t in range(niter):
 
     t2 = time.time()
     if(benchmark):print("Integration time: ",t2-t1)
-    print("Progress: %.2f %%, Rate: %.3f s/iter, Elasped time: %.2f s, Particles: %d \r"%((t/niter)*100,(t2-t11),(t2-t91),np.sum(grid)), end = '')
-
+    else: print("Progress: %.2f %%, Rate: %.3f s/iter, Elasped time: %.2f s \r"%( (t/niter)*100,(t2-t11),(t2-t91) ), end = '')
 #-------------------------------------------------------------------------------------------------------------
     # Plotting 
     if(0):
@@ -298,11 +314,11 @@ for t in range(niter):
         axs.set_axis_off()
         axs.scatter3D(x[::nth],y[::nth],z[::nth],s=m[::nth])
         axs.set_xlim([0,npix]);axs.set_ylim([0,npix]);axs.set_zlim([0,npix])
-        #text = '\nBound Mass: %.2f %%\n'%( (np.sum(grid)/np.sum(m))*100 )
-        #axs.text2D(-0.01, 0.99, text,fontsize = 8, transform=axs.transAxes)
+        text = '\nBound Mass: %.2f %%\n'%( (np.sum(grid)/np.sum(m))*100 )
+        axs.text2D(-0.01, 0.99, text,fontsize = 8, transform=axs.transAxes)
+
         plt.pause(.1)
 #-------------------------------------------------------------------------------------------------------------
-    
     # Reset the grid
     t1 = time.time()
     grid.fill(0)
