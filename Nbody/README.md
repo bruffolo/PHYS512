@@ -58,9 +58,9 @@ Showing that the FFT is largely the time limiting component of the calculation.
 ### Potential
 The potential map for a single particle (w/isolated BC's) 
 
-![alt-text-1](./Isolated_potential_map.png) ![alt-text-2](./Isolated_potential_map.png)
+![alt-text-1](./Isolated_potential_map.png) 
 
-### Results and Animations
+### Animations
 
 The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
 
