@@ -7,9 +7,19 @@ The main N body code that can be used for large ranges of particle numbers are t
 These two programs are for handling the periodic and isolated systems, and are largely similar except for the green's
 function calculation and handling of out of bounds particles.
 
-This simulator uses a leapfrog integrator.
-
+### Dependencies
 Along with these programs is a C library "C_methods.c" that is called by the python code using the c_types library. The C library must be compiled with the command "gcc-9 -o PM_methods.so C_methods.c -O3 --shared" in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
+
+### Integrator
+
+This simulator uses the standard leapfrog integration techinque.
+
+### Verbose Mode
+Adding the switch -b as a command line argument when calling the above will print all the information associated with a given simulation. 
+
+### Benchmarks
+The speed of each component of the alogorithim can be determined by setting
+```benchmark = True``` in the python script. You should also set niter = 1 (unless you want to see the output for many iterations of the integrator).
 
 ### Results and Animations
 
