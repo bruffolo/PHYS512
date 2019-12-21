@@ -1,8 +1,8 @@
 # N body simulation
 
-The main nbody code that can be used for large ranges of particle numbers are the programs:
-> Nparticle_periodic.py
-> Nparticle_isolated.py
+The main N body code that can be used for large ranges of particle numbers are the programs:
+- Nparticle_periodic.py
+- Nparticle_isolated.py
 
 These two programs are for handling the periodic and isolated systems, and are largely similar except for the green's
 function calculation and handling of out of bounds particles.
