@@ -14,6 +14,22 @@ A C library "C_methods.c" is called by the above code using c_types in python. T
 
 in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
 
+### Parameter selection
+To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated.py, and scroll down to system configuration. Here you can input the number of particles, their masses,inital positions, initial velocities, as well as the grid size and number of iterations of the integration loop.
+
+```
+# System Configuration
+npix = 2**6        # Pixel number
+npt  = 300000      # Number of particles
+ndim = 3           # Number of dimenesions
+
+# Number of iterations
+niter = 10000
+
+# Time step
+dt = 0.001
+```
+
 ### Integrator
 
 This simulator uses the standard leapfrog integration techinque.
