@@ -56,7 +56,7 @@ Grid reset time:  0.0026929378509521484
 Showing that the FFT is largely the time limiting component of the calculation.
 
 ### Potential
-(./Periodic_potential_map.png)
+![docker diagram](./Periodic_potential_map.png)
 
 ### Results and Animations
 
