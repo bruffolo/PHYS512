@@ -8,11 +8,12 @@ These two programs are for handling the periodic and isolated systems, and are l
 function calculation and handling of out of bounds particles.
 
 ### Dependencies
-A C library "C_methods.c" is called by the above code using c_types in python. The C library must be compiled with the command 
+Novel requirments are [c_types], [numba] packages.
+A C library "C_methods.c" is called by the above code using [c_types] in python. The C library must be compiled with the command 
 
 ```gcc-9 -o PM_methods.so C_methods.c -O3 --shared```
 
-in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
+in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calculations are instead passed off the the compiled c library for speed augmentation. 
 
 ### Simulation Configuration
 To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated.py, and scroll down to the system configuration. Here you can input the number of particles, as well as the grid size and number of iterations and time step of the integration loop.
@@ -51,7 +52,7 @@ Gradient Calc. time:  0.025470256805419922
 Integration time:  0.01964592933654785
 Grid reset time:  0.0026929378509521484
 ```
-Showing that the fft is largely the time limiting component of the calculation.
+Showing that the FFT is largely the time limiting component of the calculation.
 
 ### Results and Animations
 
