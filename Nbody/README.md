@@ -58,10 +58,7 @@ Showing that the FFT is largely the time limiting component of the calculation.
 ### Potential
 The potential map for a single particle (w/isolated BC's) 
 
-x                                               |  y
-:----------------------------------------------:|:-------------------------:
-![docker diagram](./Isolated_potential_map.png) |  ![docker diagram](./Isolated_potential_map.png)
-
+![alt-text-1](./Isolated_potential_map.png) ![alt-text-2](./Isolated_potential_map.png)
 
 ### Results and Animations
 
