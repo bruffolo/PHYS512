@@ -25,4 +25,4 @@ The Orbit_Animator.py program does a similar job as the above animator, but with
 or 
 ```python Orbit_Animation.py complex```
 
-to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the center.
+to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the center, the grid size is 64X64X64 and the integrator time step is 0.001.
