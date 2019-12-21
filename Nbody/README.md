@@ -8,7 +8,11 @@ These two programs are for handling the periodic and isolated systems, and are l
 function calculation and handling of out of bounds particles.
 
 ### Dependencies
-A C library "C_methods.c" is called by the above code using c_types in python. The C library must be compiled with the command "gcc-9 -o PM_methods.so C_methods.c -O3 --shared" in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
+A C library "C_methods.c" is called by the above code using c_types in python. The C library must be compiled with the command 
+
+```gcc-9 -o PM_methods.so C_methods.c -O3 --shared```
+
+in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
 
 ### Integrator
 
@@ -19,7 +23,7 @@ Adding the switch -b as a command line argument when calling the above will prin
 
 ### Benchmarks
 The speed of each component of the alogorithim can be determined by setting
-```benchmark = True``` in the python script. You should also set niter = 1 (unless you want to see the output for many iterations of the integrator).
+```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
 
 ### Results and Animations
 
