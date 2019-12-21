@@ -1,4 +1,4 @@
-# N body simulation (STILL A BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400"> <img src= ./orbit_complex.png width="350">
+# N body simulation (STILL A BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400"> <img src= ./Orbit_complex.png width="350">
 
 The main N body code that can be used for large ranges of particle numbers are the programs:
 - Nparticle_periodic.py
