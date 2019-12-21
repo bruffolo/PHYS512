@@ -77,4 +77,5 @@ or
 ```python Orbit_Animation.py complex```
 
 to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. 
-![alt-text-1](./Orbit_complex.png)
+
+![Orbiting masses](./Orbit_complex.png)
