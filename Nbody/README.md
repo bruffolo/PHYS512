@@ -18,3 +18,9 @@ or
 ```python Animation.py periodic```
 
 to see an animation of an nbody simulation with 100,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 64X64X64. For better handling of the figure only every 100 particles of the 100,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
+
+The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visulization of a circular orbit. You can run
+```python Orbit_Animation.py simple```
+or 
+```python Orbit_Animation.py complex```
+to animate a pre computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the center.
