@@ -56,9 +56,9 @@ Grid reset time:  0.0026929378509521484
 Showing that the FFT is largely the time limiting component of the calculation.
 
 ### Potential
-The potential map for a single particle (w/isolated BC's) 
+A softened 1/r potential is used, and the grid based potential map for a single particle (w/isolated BC's)  is shown below with comparison to the analytic 1/r potential.
 
-![alt-text-1](./Isolated_potential_map.png) 
+<img src= ./Isolated_potential_map.png width="350">  <img src= ./Isolated_potential_plot.png width="350"> 
 
 ### Animations
 
