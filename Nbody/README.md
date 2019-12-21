@@ -1,4 +1,4 @@
-# N body simulation (STILL A BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400"> <img src= ./Orbit_complex.png width="350">
+# N body simulation (BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400"> <img src= ./Orbit_complex.png width="350">
 
 The main N body code that can be used for large ranges of particle numbers are the programs:
 - Nparticle_periodic.py
@@ -77,5 +77,3 @@ or
 ```python Orbit_Animation.py complex```
 
 to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. The animations look like the following:
-
-![Orbiting masses](./Orbit_complex.png)
