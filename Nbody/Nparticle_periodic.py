@@ -26,8 +26,8 @@ def to_grid_py(xy,grid,cell_loc):
         cell_loc[i] = g_xy[i,0],g_xy[i,1],g_xy[i,2]
 
 # System Configuration
-npix = 2**7        # Pixel number
-npt  = 100000      # Number of particles
+npix = 2**6        # Pixel number
+npt  = 300000      # Number of particles
 ndim = 3           # Number of dimenesions
 
 # Particle mass parameters
@@ -38,10 +38,10 @@ m_max = 1        # Maximum particle mass
 m_min = 0.4      # Mininmum particle mass
 
 # Number of iterations
-niter = 1000
+niter = 10000
 
 # Time step
-dt = 0.01
+dt = 0.001
 
 # Check if user wants verbose printing to stdout
 try:
@@ -50,18 +50,18 @@ except(IndexError):
     verbose = False
 
 # Plotting parameters (during simulation)
-show3D = True
-nth = 100        # Plot every nth particle on screen
+show3D = False
+nth    = 300        # Plot every nth particle on screen
 plt_iter = 5  # Plot particles every plt_iter iteration
 
 # Data saving parameters
-save_data = False
+save_data = True
 save_iter = 10   # Save position particle data every save_iter iteration
-save_nth  = 100  # Save position particle data every save_nth particle
+save_nth  = 300  # Save position particle data every save_nth particle
 
-x_file = "x.txt"
-y_file = "y.txt"
-z_file = "z.txt"
+x_file = "x_periodic.txt"
+y_file = "y_periodic.txt"
+z_file = "z_periodic.txt"
 
 # Benchmark mode
 benchmark = False
@@ -168,7 +168,7 @@ if(verbose):
     if(save_data):
         print("\nData save parameters: ")
         print(">Positional data of every %dth particle will be saved every %dth iteration"%(save_nth,save_iter))
-        print(">Data will be saved in files: ",x_file,", ",y_file,", ",z_file)
+        print(">Data will be saved in files: ");print(x_file+", "+y_file+", ",z_file)
     print()
 
 if(benchmark):
@@ -186,6 +186,7 @@ lz = np.asarray(np.round(z),dtype='int')
 
 # Assign particles to the grid
 to_grid_periodic(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, npt, npix)
+
 l = np.array([lx,ly,lz])
 
 # Potential calculation
@@ -219,7 +220,6 @@ if(show3D):
 
 for t in range(niter):
     t11 = time.time()
-    # Assign particles to the grid
     to_grid_periodic(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, npt, npix)
 
     t2 = time.time()
@@ -281,7 +281,7 @@ for t in range(niter):
 
     t2 = time.time()
     if(benchmark):print("Integration time: ",t2-t1)
-    print("Progress: %.2f %%, Rate: %.3f s/iter, Elasped time: %.2f s, Particles: %d \r"%((t/niter)*100,(t2-t11),(t2-t91),np.sum(grid)), end = '')
+    print("Progress: %.2f %%, Rate: %.3f s/iter, Elasped time: %.2f s \r"%((t/niter)*100,(t2-t11),(t2-t91)), end = '')
 
 #-------------------------------------------------------------------------------------------------------------
     # Plotting 

@@ -26,7 +26,7 @@ def to_grid_py(xy,grid,cell_loc):
 
 # System Configuration
 npix = 2**6        # Pixel number
-npt  = 100000      # Number of particles
+npt  = 300000      # Number of particles
 ndim = 3           # Number of dimenesions
 
 # Particle mass parameters
@@ -40,7 +40,7 @@ m_min = 0.4      # Mininmum particle mass
 niter = 10000
 
 # Time step
-dt = 0.01
+dt = 0.001
 
 # Check if user wants verbose printing to stdout
 try:
@@ -49,14 +49,14 @@ except(IndexError):
     verbose = False
 
 # Plotting parameters (during simulation)
-show3D = True
+show3D = False
 nth = 100        # Plot every nth particle on screen
 plt_iter = 5    # Plot particles every plt_iter iteration
 
 # Data saving parameters
-save_data = False
+save_data = True
 save_iter = 10   # Save position particle data every save_iter iteration
-save_nth  = 100  # Save position particle data every save_nth particle
+save_nth  = 300  # Save position particle data every save_nth particle
 
 x_file = "x_isolated.txt"
 y_file = "y_isolated.txt"
@@ -170,7 +170,7 @@ if(verbose):
     if(save_data):
         print("\nData save parameters: ")
         print(">Positional data of every %dth particle will be saved every %dth iteration"%(save_nth,save_iter))
-        print(">Data will be saved in files: ",x_file,", ",y_file,", ",z_file)
+        print(">Data will be saved in files: ");print(x_file+", "+y_file+", ",z_file)
     print()
 
 if(benchmark):
