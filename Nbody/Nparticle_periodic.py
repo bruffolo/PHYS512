@@ -25,7 +25,9 @@ def to_grid_py(xy,grid,cell_loc):
         grid[g_xy[i,0],g_xy[i,1],g_xy[i,2]] = grid[g_xy[i,0],g_xy[i,1],g_xy[i,2]] + 1
         cell_loc[i] = g_xy[i,0],g_xy[i,1],g_xy[i,2]
 
-# System Configuration
+########################################
+###      System Configuration        ###
+########################################
 npix = 2**6        # Pixel number
 npt  = 300000      # Number of particles
 ndim = 3           # Number of dimenesions
@@ -59,9 +61,7 @@ save_data = True
 save_iter = 10   # Save position particle data every save_iter iteration
 save_nth  = 300  # Save position particle data every save_nth particle
 
-x_file = "x_periodic.txt"
-y_file = "y_periodic.txt"
-z_file = "z_periodic.txt"
+filename = "periodic.txt"
 
 # Benchmark mode
 benchmark = False
@@ -312,10 +312,14 @@ for t in range(niter):
 #-------------------------------------------------------------------------------------------------------------
 t99 = time.time(); print("\n\nTotal simulation time: %.2f s"%(t99-t91))
 
+x_file = "Positional_data/"+"x"+filename
+y_file = "Positional_data/"+"y"+filename
+z_file = "Positional_data/"+"z"+filename
+
 # Save x,y and z data to files
 if(save_data):
     if(verbose): print("\nSaving Data ...")
-    np.savetxt("Positional_data/"+x_file,x_save,delimiter=",")
-    np.savetxt("Positional_data/"+y_file,y_save,delimiter=",")
-    np.savetxt("Positional_data/"+z_file,z_save,delimiter=",")
+    np.savetxt(x_file,x_save,delimiter=",")
+    np.savetxt(y_file,y_save,delimiter=",")
+    np.savetxt(z_file,z_save,delimiter=",")
     if(verbose): print("Save complete!")
