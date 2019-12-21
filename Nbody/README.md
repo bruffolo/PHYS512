@@ -11,6 +11,8 @@ This simulator uses a leapfrog integrator.
 
 Along with these programs is a C library "C_methods.c" that is called by the python code using the c_types library. The C library must be compiled with the command "gcc-9 -o PM_methods.so C_methods.c -O3 --shared" in the command line. This compiles to a shared library called "PM_methods.so". The particle grid assignment and handling at the boundaries are operations that involve looping over particle positions, and are natively very slow in python. These calulations are instead passed off the the compiled c library for speed augmentation. 
 
+### Results and Animations
+
 The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
 
 ```python Animation.py isolated```
