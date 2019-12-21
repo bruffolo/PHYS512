@@ -60,6 +60,9 @@ A softened 1/r potential is used, and the grid based potential map for a single 
 
 <img src= ./Isolated_potential_map.png width="350">  <img src= ./Isolated_potential_plot.png width="350"> 
 
+A potential map showing the proper implementation of periodic boundary conditions is shown below:
+![](./Periodic_potential_map.png)
+
 ### Animations
 
 The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
