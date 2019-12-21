@@ -8,7 +8,8 @@ These two programs are for handling the periodic and isolated systems, and are l
 function calculation and handling of out of bounds particles.
 
 ### Dependencies
-Novel requirments are [c_types], [numba] packages.
+Novel requirements are c_types, numba packages.
+
 A C library "C_methods.c" is called by the above code using [c_types] in python. The C library must be compiled with the command 
 
 ```gcc-9 -o PM_methods.so C_methods.c -O3 --shared```
