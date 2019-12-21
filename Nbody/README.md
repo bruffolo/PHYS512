@@ -1,4 +1,4 @@
-# N body simulation (STILL A BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="48">
+# N body simulation (STILL A BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400">
 
 The main N body code that can be used for large ranges of particle numbers are the programs:
 - Nparticle_periodic.py
