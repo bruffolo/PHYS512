@@ -28,7 +28,7 @@ niter = 10000
 # Time step
 dt = 0.001
 ```
-The particle masses, and initial conditions can be set in the particle setup portion of the code.
+The particle masses, and initial conditions can be set in the "particle setup" portion of the code.
 
 ### Integrator
 
