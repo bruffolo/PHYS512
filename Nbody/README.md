@@ -22,7 +22,7 @@ To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated
 ```
 npix = 2**6        # Pixel number
 npt  = 300000      # Number of particles
-ndim = 3           # Number of dimenesions
+ndim = 3           # Number of dimensions
 
 # Number of iterations
 niter = 10000
@@ -34,13 +34,13 @@ The particle masses, and initial conditions can be set in the "particle setup" p
 
 ### Integrator
 
-This simulator uses the standard leapfrog integration techinque.
+This simulator uses the standard leapfrog integration technique.
 
 ### Verbose Mode
 Adding the switch -b as a command line argument when calling the above will print all the information associated with a given simulation. 
 
 ### Benchmarks
-The speed of each component of the alogorithim can be determined by setting
+The speed of each component of the algorithm for any particle number/grid size can be determined by setting
 ```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
 
 For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode returns:
@@ -70,10 +70,11 @@ or
 
 to see an animation of an nbody simulation with 300,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 64X64X64. For better handling of the figure only every 300 particles of the 300,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
 
-The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visulization of a circular orbit. You can run
+The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visualization of a circular orbit. You can run
 
 ```python Orbit_Animation.py simple```
 or 
 ```python Orbit_Animation.py complex```
 
-to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the center, the grid size is 64X64X64 and the integrator time step is 0.001.
+to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. 
+![alt-text-1](./Orbit_complex.png)
