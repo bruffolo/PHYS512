@@ -19,6 +19,7 @@ in the command line. This compiles to a shared library called "PM_methods.so". T
 ### Simulation Configuration
 To run a simulation, open either the Nparticle_periodic.py or Nparticle_isolated.py, and scroll down to the system configuration. Here you can input the number of particles, as well as the grid size and number of iterations and time step of the integration loop.
 
+
 ```
 npix = 2**6        # Pixel number
 npt  = 300000      # Number of particles
@@ -32,29 +33,6 @@ dt = 0.001
 ```
 The particle masses, and initial conditions can be set in the "particle setup" portion of the code.
 
-### Integrator
-
-This simulator uses the standard leapfrog integration technique.
-
-### Verbose Mode
-Adding the switch -b as a command line argument when calling the above will print all the information associated with a given simulation. 
-
-### Benchmarks
-The speed of each component of the algorithm for any particle number/grid size can be determined by setting
-```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
-
-For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode returns:
-
-```
-####### Benchmarks #######
-Grid snap calc. time:  0.001196146011352539
-FFT calc. time:  0.09336996078491211
-Gradient Calc. time:  0.025470256805419922
-Integration time:  0.01964592933654785
-Grid reset time:  0.0026929378509521484
-```
-Showing that the FFT is largely the time limiting component of the calculation.
-
 ### Potential
 A softened 1/r potential is used, and the grid based potential map for a single particle (w/isolated BC's)  is shown below with comparison to the analytic 1/r potential.
 
@@ -62,6 +40,11 @@ A softened 1/r potential is used, and the grid based potential map for a single 
 
 A potential map showing the proper implementation of periodic boundary conditions is shown below:
 ![](./Periodic_potential_map.png)
+
+
+### Integrator
+
+This simulator uses the standard leapfrog integration technique.
 
 ### Animations
 
@@ -80,6 +63,27 @@ or
 ```python Orbit_Animation.py complex```
 
 to animate a pre-computed 2 body circular orbit, or more complex solar system like orbit, respectively. Here the orbiting mass(es) are much lighter than the fixed mass at the centre, the grid size is 64X64X64 and the integrator time step is 0.001. 
+
+## Modes
+
+### Verbose Mode
+Adding the switch -b as a command line argument when calling the above will print all the information associated with a given simulation. 
+
+### Benchmark Mode
+The speed of each component of the algorithm for any particle number/grid size can be determined by setting
+```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
+
+For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode returns:
+
+```
+####### Benchmarks #######
+Grid snap calc. time:  0.001196146011352539
+FFT calc. time:  0.09336996078491211
+Gradient Calc. time:  0.025470256805419922
+Integration time:  0.01964592933654785
+Grid reset time:  0.0026929378509521484
+```
+Showing that the FFT is largely the time limiting component of the calculation.
 
 ## Questions
 
