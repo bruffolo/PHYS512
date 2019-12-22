@@ -7,6 +7,9 @@ import ctypes
 from numba import jit
 import sys
 
+# Enable command line switches
+switches = True
+
 # Pull necessary functions from companion C library
 c_lib = ctypes.cdll.LoadLibrary("PM_methods.so")
 
@@ -28,8 +31,8 @@ def to_grid_py(xy,grid,cell_loc):
 ###      System Configuration        ###
 ########################################
 
-npix = 2**6        # Pixel number
-npt  = 300000      # Number of particles
+npix = 2**7        # Pixel number
+npt  = 1           # Number of particles
 ndim = 3           # Number of dimenesions
 
 # Particle mass parameters
@@ -45,31 +48,47 @@ niter = 10000
 # Time step
 dt = 0.001
 
-# Check if user wants verbose printing to stdout
-try:
-    if(sys.argv[1] == '-b'): verbose = True
-except(IndexError): 
-    verbose = False
+########################################
+###             Modes                ###
+########################################
 
-# Plotting parameters (during simulation)
+########### Plotting parameters (live during simulation) ###########
 show3D = False
 nth = 100        # Plot every nth particle on screen
 plt_iter = 5    # Plot particles every plt_iter iteration
 
-# Data saving parameters
-save_data = True
+########### Data saving parameters ###########
+save_data = False
 save_iter = 10   # Save position particle data every save_iter iteration
 save_nth  = 300  # Save position particle data every save_nth particle
-
 filename = "isolated.txt"
 
-# Benchmark mode
+########### Benchmark mode ###########
 benchmark = False
-
 # Perferably if benchmark = True, you should set niter = 1, otherwise benchmarks will print out every iteration!
 
-# Potential test mode
+########### Potential test mode ###########
 potential_test = False
+
+########### Verbose mode ###########
+verbose = False
+
+# Switches from user input
+args = len(sys.argv) - 1
+cmd_pars = ["-b","-v","-p","-s","-pt"]
+
+if(switches):
+    for i in range(args):
+        if(sys.argv[i+1] == cmd_pars[0]):
+            benchmark = True
+        if(sys.argv[i+1] == cmd_pars[1]):
+            verbose = True
+        if(sys.argv[i+1] == cmd_pars[2]):
+            show3D = True
+        if(sys.argv[i+1] == cmd_pars[3]):
+            save_data = True
+        if(sys.argv[i+1] == cmd_pars[4]):
+            potential_test = True
 
 ########################################
 ###        Green's function          ###
@@ -144,10 +163,11 @@ y = np.random.rand(npt)*(npix-0.6)
 z = np.random.rand(npt)*(npix-0.6)
 
 if(potential_test):
-    npix = 64
     niter = 0
     show3D = False
-    z[:] = npix//2
+    z[0] = npix//2
+    x[0] = npix//2
+    y[0] = npix//2
 
 
 # Data saving arrays (will be printed to file)
@@ -171,7 +191,6 @@ if(verbose):
     if(save_data):
         print("\nData save parameters: ")
         print(">Positional data of every %dth particle will be saved every %dth iteration"%(save_nth,save_iter))
-        print(">Data will be saved in files: ");print(x_file+", "+y_file+", ",z_file)
     print()
 
 if(benchmark):
@@ -210,7 +229,8 @@ grid.fill(0)
 
 if(potential_test):
     plt.figure(1)
-    plt.imshow(potential[:,:,npix//2].T,origin='lower');plt.colorbar()
+    plt.imshow(potential[:npix,:npix,npix//2].T,origin='lower');plt.colorbar()
+    plt.savefig("Isolated_potential_map.png")
     plt.show()
 
 ########################################
@@ -328,9 +348,9 @@ for t in range(niter):
 #-------------------------------------------------------------------------------------------------------------
 t99 = time.time(); print("\n\nTotal simulation time: %.2f s"%(t99-t91))
 
-x_file = "Positional_data/"+"x"+filename
-y_file = "Positional_data/"+"y"+filename
-z_file = "Positional_data/"+"z"+filename
+x_file = "Positional_data/"+"x_"+filename
+y_file = "Positional_data/"+"y_"+filename
+z_file = "Positional_data/"+"z_"+filename
 
 # Save x,y and z data to files
 if(save_data):
