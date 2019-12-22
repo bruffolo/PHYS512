@@ -92,9 +92,10 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 
 ## Questions
 
-### 1
+### 1)
 
 ### 2 
+The algorithm employed has good energy conservation properties and does well at maintaining a circular orbit. 
 The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py simple``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py```.
 
 ### 3 
