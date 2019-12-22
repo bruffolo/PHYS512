@@ -43,10 +43,10 @@ m_max = 1        # Maximum particle mass
 m_min = 0.4      # Mininmum particle mass
 
 # Number of iterations
-niter = 30000
+niter = 5000
 
 # Time step
-dt = 0.0001
+dt = 0.001
 
 ########################################
 ###             Modes                ###
