@@ -58,7 +58,7 @@ to see an animation of an nbody simulation with 300,000 randomly distributed par
 
 The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visualization of a circular orbit. You can run
 
-```python Orbit_Animation.py simple```
+```python Orbit_Animation.py circular```
 or 
 ```python Orbit_Animation.py complex```
 
@@ -96,7 +96,7 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 
 ### 2) 
 The algorithm employed has good energy conservation properties and does well at maintaining a circular orbit. 
-The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py simple``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py```.
+The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py circular``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py```.
 
 ### 3) 
 Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the parameters of your choice for grid size, dt, and the number of particles. You can have the code do live animation during the computation by setting ```show3D = True``` in the code.  
