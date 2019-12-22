@@ -8,7 +8,7 @@ These two programs are for handling the periodic and isolated systems, and are l
 function calculation and handling of out of bounds particles.
 
 ### Dependencies
-Novel requirements are c_types, numba packages.
+Novel requirements are c_types and numba packages.
 
 A C library "C_methods.c" is called by the above code using [c_types] in python. The C library must be compiled with the command 
 
@@ -96,7 +96,5 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 
 2) The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py simple``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py```.
 
-3) Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the parameters of your choice for grid size, dt, and the number of particles. You can have the code do live animation during the computation by setting ```show3D = True``` in the code. 
-Energy conservation
+3) Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the parameters of your choice for grid size, dt, and the number of particles. You can have the code do live animation during the computation by setting ```show3D = True``` in the code.  The periodic boundary conditions conserve energy relatively well until dense clusters of mass form, at which point the system energy can deflect up to 20% away from the initial value.
 
-4)
