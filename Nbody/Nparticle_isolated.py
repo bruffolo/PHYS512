@@ -6,6 +6,7 @@ import time
 import ctypes
 from numba import jit
 import sys
+import os
 
 # Enable command line switches
 switches = True
@@ -31,19 +32,18 @@ def to_grid_py(xy,grid,cell_loc):
 ###      System Configuration        ###
 ########################################
 
-npix = 2**7        # Pixel number
-npt  = 1           # Number of particles
+npix = 2**6        # Pixel number
+npt  = 100000           # Number of particles
 ndim = 3           # Number of dimenesions
 
 # Particle mass parameters
 m_equal  = False # Set all masses to common value 
 m_random = True  # Set masses of particles randomly
-
 m_max = 1        # Maximum particle mass 
 m_min = 0.4      # Mininmum particle mass
 
 # Number of iterations
-niter = 10000
+niter = 5000
 
 # Time step
 dt = 0.001
@@ -54,14 +54,14 @@ dt = 0.001
 
 ########### Plotting parameters (live during simulation) ###########
 show3D = False
-nth = 100        # Plot every nth particle on screen
+nth = 100       # Plot every nth particle on screen
 plt_iter = 5    # Plot particles every plt_iter iteration
 
 ########### Data saving parameters ###########
 save_data = False
 save_iter = 10   # Save position particle data every save_iter iteration
-save_nth  = 300  # Save position particle data every save_nth particle
-filename = "isolated.txt"
+save_nth  = 100  # Save position particle data every save_nth particle
+sim_name = "isolated"
 
 ########### Benchmark mode ###########
 benchmark = False
@@ -175,6 +175,7 @@ if(save_data):
     x_save = np.zeros([niter//save_iter,npt//save_nth])
     y_save = x_save.copy()
     z_save = x_save.copy()
+    E_save = np.zeros([niter//save_iter])
 
 if(show3D): plt.ion()
 
@@ -217,6 +218,9 @@ l = np.array([lx,ly,lz])
 density_ft = rfftn(grid)
 potential = irfftn(density_ft*green_ft)
 
+# Energy Calculation
+E_init = np.sum(-(1/2)*potential*grid ) + (1/2)*np.sum(m*(vx**2 + vy**2 + vz**2))
+
 # Acceleration calculation in every grid cell
 Fx_prev,Fy_prev,Fz_prev = np.gradient(potential)
 
@@ -254,7 +258,7 @@ for t in range(niter):
     to_grid(lx.ctypes.data, ly.ctypes.data, lz.ctypes.data, grid.ctypes.data,m.ctypes.data, bc.ctypes.data, npt, npix)
 
     t2 = time.time()
-    if(benchmark):print("Grid snap calc. time: ",t2-t11)
+    if(benchmark):print("Grid snap calc. time: ",t2-t11,"s")
 
 #-------------------------------------------------------------------------------------------------------------
     # Potential Calculation
@@ -263,14 +267,14 @@ for t in range(niter):
     density_ft = rfftn(grid)
     potential = irfftn(density_ft*green_ft)
     t2 = time.time()
-    if(benchmark):print("FFT calc. time: ",t2-t1)
+    if(benchmark):print("FFT calc. time: ",t2-t1,"s")
 #-------------------------------------------------------------------------------------------------------------
     # Force calculation
     t1 = time.time()
     Fx,Fy,Fz = np.gradient(potential[:npix,:npix,:npix])
 
     t2 = time.time()
-    if(benchmark):print("Gradient Calc. time: ",t2-t1)
+    if(benchmark):print("Gradient Calc. time: ",t2-t1,"s")
 #-------------------------------------------------------------------------------------------------------------
 
     # Integration of particle positions and velocities (LEAPFROG method)
@@ -316,8 +320,18 @@ for t in range(niter):
     ay_prev = ay.copy()
     az_prev = az.copy()
 
+    # Calculate energy 
+    E_current = np.sum(-(1/2)*potential*grid ) + (1/2)*np.sum(m*(vx**2 + vy**2 + vz**2))
+
+    # Save the position data
+    if(save_data and t%save_iter == 0):
+        x_save[t//save_iter] = x[::save_nth].copy()
+        y_save[t//save_iter] = y[::save_nth].copy()
+        z_save[t//save_iter] = z[::save_nth].copy()
+        E_save[t//save_iter] = E_current
+
     t2 = time.time()
-    if(benchmark):print("Integration time: ",t2-t1)
+    if(benchmark):print("Integration time: ",t2-t1,"s")
     else: print("Progress: %.2f %%, Rate: %.3f s/iter, Elasped time: %.2f s \r"%( (t/niter)*100,(t2-t11),(t2-t91) ), end = '')
 #-------------------------------------------------------------------------------------------------------------
     # Plotting 
@@ -334,8 +348,8 @@ for t in range(niter):
         axs.set_axis_off()
         axs.scatter3D(x[::nth],y[::nth],z[::nth],s=m[::nth])
         axs.set_xlim([0,npix]);axs.set_ylim([0,npix]);axs.set_zlim([0,npix])
-        text = '\nBound Mass: %.2f %%\n'%( (np.sum(grid)/np.sum(m))*100 )
-        axs.text2D(-0.01, 0.99, text,fontsize = 8, transform=axs.transAxes)
+        text = 'Mass Conservation:     %.2f %%\nEnergy Conservation:  %.2f %%'%((np.sum(grid)/np.sum(m))*100,(E_current/E_init)*100 )
+        axs.text2D(-0.12, 1.05, text,fontsize = 8, transform=axs.transAxes)
 
         plt.pause(.1)
 #-------------------------------------------------------------------------------------------------------------
@@ -344,18 +358,28 @@ for t in range(niter):
     grid.fill(0)
 
     t2 = time.time()
-    if(benchmark):print("Grid reset time: ",t2-t1)
+    if(benchmark):print("Grid reset time: ",t2-t1,"s")
 #-------------------------------------------------------------------------------------------------------------
 t99 = time.time(); print("\n\nTotal simulation time: %.2f s"%(t99-t91))
 
-x_file = "Positional_data/"+"x_"+filename
-y_file = "Positional_data/"+"y_"+filename
-z_file = "Positional_data/"+"z_"+filename
-
-# Save x,y and z data to files
+# Save x,y and z and E data to files
 if(save_data):
+
+    # Make the required directory if it does not exist
+    directory = "Data/"+sim_name
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    # Filenames
+    x_file = directory+"/x.txt"
+    y_file = directory+"/y.txt"
+    z_file = directory+"/z.txt"
+    E_file = directory+"/E.txt"
+
+    # Save the data
     if(verbose): print("\nSaving Data ...")
     np.savetxt(x_file,x_save,delimiter=",")
     np.savetxt(y_file,y_save,delimiter=",")
     np.savetxt(z_file,z_save,delimiter=",")
+    np.savetxt(E_file,E_save,delimiter=",")
     if(verbose): print("Save complete!")

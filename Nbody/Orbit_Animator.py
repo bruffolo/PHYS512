@@ -11,22 +11,26 @@ wd = os.getcwd()
 ##########################################
 
 try:
-    file_ext = sys.argv[1]
+    sim_name = sys.argv[1]
 except(IndexError): 
     print("Enter a one of the following command line arguments: ")
-    print("> orbit\n> orbit_complex")
+    print("> simple_orbit\n> complex_orbit")
     exit()
 
-x_file = "x_"+file_ext+".txt"
-y_file = "y_"+file_ext+".txt"
-z_file = "z_"+file_ext+".txt"
+directory = "/Data/"+sim_name
+
+# Filenames
+x_file = wd+directory+"/x.txt"
+y_file = wd+directory+"/y.txt"
+z_file = wd+directory+"/z.txt"
+E_file = wd+directory+"/E.txt"
 
 
 npix = 64
 
-x = np.loadtxt(wd+"/Positional_data/"+x_file,delimiter=",");print("> x data loaded.")
-y = np.loadtxt(wd+"/Positional_data/"+y_file,delimiter=",");print("> y data loaded.")
-z = np.loadtxt(wd+"/Positional_data/"+z_file,delimiter=",");print("> z data loaded.")
+x = np.loadtxt(x_file,delimiter=",");print("> x data loaded.")
+y = np.loadtxt(y_file,delimiter=",");print("> y data loaded.")
+z = np.loadtxt(z_file,delimiter=",");print("> z data loaded.")
 
 
 npix = 64
@@ -51,5 +55,7 @@ for t in range(size):
     axs.scatter3D(x[t,0],y[t,0],z[t,0],color = "Black")
     
     axs.set_xlim([0,npix]);axs.set_ylim([0,npix]);axs.set_zlim([0,npix])
+    if(t == 1200-1):
+        plt.savefig("Orbit_complex.png",dpi=300)
     plt.pause(0.0001)
     print("Frame: %d/%d\r"%(t,size), end = '')
