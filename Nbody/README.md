@@ -67,10 +67,10 @@ to animate a pre-computed 2 body circular orbit, or more complex solar system li
 ## Modes
 
 ### Verbose Mode
-Adding the switch -v as a command line argument when calling the above will print all the information associated with a given simulation. 
+Adding the switch ```-v``` as a command line argument when calling the above will print all the information associated with a given simulation. 
 
 ### Benchmark Mode
-Adding the switch -b as a command line argument, the speed of each component of the algorithm for any particle number/grid size can be determined by setting
+Adding the switch ```-b``` as a command line argument, the speed of each component of the algorithm for any particle number/grid size can be determined by setting
 ```benchmark = True``` in the python script. You should also set ```niter = 1``` (unless you want to see the output for many iterations of the integrator).
 
 For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode returns:
@@ -86,10 +86,10 @@ Grid reset time:  0.0026929378509521484
 Showing that the FFT is largely the time limiting component of the calculation.
 
 ### Live Plotting Mode
-Adding the switch -p as a command line argument, you can have the code do live animation during the computation by setting ```show3D = True``` in the code. Note that for live plotting to not significantly slow down the code, you could set ```nth = npt/1000```, and set ```plt_iter ``` as is necessary. These commands control the number of particles that are live plotted (every "nth" particle is plotted) and how many iterations of the integrator are performed before the plot is updated.
+Adding the switch ```-p``` as a command line argument, you can have the code do live animation during the computation by setting ```show3D = True``` in the code. Note that for live plotting to not significantly slow down the code, you could set ```nth = npt/1000```, and set ```plt_iter ``` as is necessary. These commands control the number of particles that are live plotted (every "nth" particle is plotted) and how many iterations of the integrator are performed before the plot is updated.
 
 ### Data Saving Mode
-Adding the switch -s as a command line argument,
+Adding the switch ```-s``` as a command line argument,
 
 ## Questions
 
