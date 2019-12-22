@@ -88,11 +88,11 @@ Showing that the FFT is largely the time limiting component of the calculation.
 Adding the switch ```-p``` as a command line argument, you can have the code do live animation during the computation. Note that for live plotting to not significantly slow down the code, you could set ```nth = npt/1000```, and set ```plt_iter ``` as is necessary. These commands control the number of particles that are live plotted (every "nth" particle is plotted) and how many iterations of the integrator are performed before the plot is updated.
 
 ### Data Saving Mode
-Adding the switch ```-s``` as a command line argument,
+Adding the switch ```-s``` as a command line argument allows you to save the calculated positional data of the particles.
 
 ## Questions
 
-1)
+1) 
 
 2) The stability of a circular orbit with this algorithm can be seen by running the ```python Orbit_Animation.py simple``` to animate pre-computed data of the motion of a light mass in orbit around a much heavier mass. If instead you want to see an animation during the live computation of the particles motion, run ```python Orbit.py```.
 
