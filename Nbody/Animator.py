@@ -12,7 +12,7 @@ except(IndexError):
     exit()
 
 
-npix = 64
+npix = 128
 directory = "Data/"+sim_name
 
 x = np.loadtxt(directory+"/x.txt",delimiter=",");print("> x data loaded.")
