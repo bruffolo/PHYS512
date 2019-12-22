@@ -76,11 +76,11 @@ For example, for 100,000 particles @ 128X128X128 grid size, the benchmark mode r
 
 ```
 ####### Benchmarks #######
-Grid snap calc. time:  0.001196146011352539
-FFT calc. time:  0.09336996078491211
-Gradient Calc. time:  0.025470256805419922
-Integration time:  0.01964592933654785
-Grid reset time:  0.0026929378509521484
+Grid snap calc. time:  0.004080295562744141 s
+FFT calc. time:  1.4266560077667236 s
+Gradient Calc. time:  0.06095528602600098 s
+Integration time:  0.02000594139099121 s
+Grid reset time:  0.0131072998046875 s
 ```
 Showing that the FFT is largely the time limiting component of the calculation.
 
