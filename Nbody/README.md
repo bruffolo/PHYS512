@@ -90,7 +90,7 @@ Adding the switch ```-p``` as a command line argument, you can have the code do 
 ### Data Saving Mode
 Adding the switch ```-s``` as a command line argument allows you to save the calculated positional data of the particles. The data will be saved into a subdirectory of the "Data" folder, the name of this directory is given by the ```sim_name``` variable. The python variables ```save_iter``` and ```save_nth``` allow you to chose how many iterations of the integrator and how many of the particle positions are written to file, respectively (i.e Save particle position data every save_iter iteration/ Save particle position data every save_nth particle). I
 
-NOTE: f you want all the data, set both ```save_iter``` and ```save_nth``` to 1.
+NOTE: If you want all the data, set both ```save_iter``` and ```save_nth``` to 1.
 
 ## Questions
 
