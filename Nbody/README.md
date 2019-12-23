@@ -54,7 +54,7 @@ The Animation.py program is written to animate (really just rapidly plot) the ou
 or 
 ```python Animation.py periodic```
 
-to see an animation of an nbody simulation with 300,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 64X64X64. For better handling of the figure only every 300 particles of the 300,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
+to see an animation of an nbody simulation with 300,000 randomly distributed particles, time step (dt) of 1e-3 and grid size of 128X128X128. For better handling of the figure only every 300 particles of the 300,000 are plotted. The figure is 3 dimensional and fully interactive, allowing the user to rotate figure at will during the animation. 
 
 The Orbit_Animator.py program does a similar job as the above animator, but with extra lines drawn behind the moving particles illustrating their path in space, this is very handy for the visualization of a circular orbit. You can run
 
@@ -102,6 +102,6 @@ The stability of a circular orbit with this algorithm can be seen by running the
 Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the parameters of your choice for grid size, dt, and the number of particles. You can have the code do live animation during the computation by setting ```show3D = True``` in the code.  
 
 The periodic boundary conditions conserve energy relatively well until dense clusters of mass form, at which point the system energy can deflect up to 10% away from the initial value.
-During the initial collapse of mass, the isolated and periodic boundary conditions have approximately equal energy conservation characteristics. As mass begins to be ejected from the grid edges, the isolated boundary conditions conserve energy much more poorly, although this is largely expected because of the way particles are handled after leaving the grid range. Specifically, after leaving the grid, (for the isolated BC's) the particles no longer feel any force from the grid bound mass and their gravitational potential potential energy is no longer added into the energy calculation.
+During the initial collapse of mass, the isolated and periodic boundary conditions have approximately equal energy conservation characteristics. As mass begins to be ejected from the grid edges, the isolated boundary conditions conserve energy much more poorly, although this is largely expected because of the way particles are handled after leaving the grid range. Specifically, after leaving the grid, (for the isolated BC's) the particles no longer feel any force from the grid bound mass and their gravitational potential potential energy is no longer added into the energy calculation. Energy conservation is plotted in the 3D animations as a percentage of current/initial energy.
 
 
