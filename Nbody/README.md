@@ -1,4 +1,4 @@
-# N body simulation (BUG IN THIS CODE, WILL FIX ASAP) <img src= ./photo.png width="400"> <img src= ./Orbit_complex.png width="350">
+# N body simulation  <img src= ./photo.png width="400"> <img src= ./Orbit_complex.png width="350">
 
 The main N body code that can be used for large ranges of particle numbers are the programs:
 - Nparticle_periodic.py
@@ -93,7 +93,7 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 ## Questions
 
 ### 1) 
-Single particles remain motionless in this algorithm. To see this you can run  either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with ```npt=1``` and look at the x, y and z arrays to confirm that they are unchanging in time. A pre-computed data set, in the directory "Data/single" is also provided for this purpose. This data set was taken for 1000 iterations of the integrator at a dt of 1e-3.
+Single particles remain motionless in this algorithm. To see this you can run  either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with ```npt=1``` and use the switch ```-s``` to save the data over the full or partical integration time. You can then  look at saved the x, y and z data to confirm that they are unchanging in time. A pre-computed data set, in the directory "Data/single" is also provided for this purpose. This data set was taken for 1000 iterations of the integrator at a dt of 1e-3.
 
 ### 2) 
 The algorithm employed has good energy conservation properties and does well at maintaining a circular orbit. 
