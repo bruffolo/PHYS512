@@ -48,7 +48,7 @@ This simulator uses the standard leapfrog integration technique.
 
 ### Animations
 
-The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Positional_data" folder. With the folder contents downloaded (and directory structure intact), you can run
+The Animation.py program is written to animate (really just rapidly plot) the outputs of the isolated and periodic Nbody simulation from the above scripts that have been pre-computed and saved in textfile form in the "Data" folder. With the folder contents downloaded (and directory structure intact), you can run
 
 ```python Animation.py isolated```
 or 
