@@ -92,7 +92,7 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 
 ## Questions
 
-### 1)
+### 1) Single particles remain motionless in this algorithm. To see this you can run  either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with ```npt=1``` and look at the x, y and z arrays to confirm that they are unchanging in time. A pre-computed data set, in the directory "Data/single" is also provided for this purpose. This data set was taken for 1000 iterations of the integrator at a dt of 1e-3.
 
 ### 2) 
 The algorithm employed has good energy conservation properties and does well at maintaining a circular orbit. 
@@ -103,5 +103,7 @@ Run either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with the p
 
 The periodic boundary conditions conserve energy relatively well until dense clusters of mass form, at which point the system energy can deflect up to 10% away from the initial value.
 During the initial collapse of mass, the isolated and periodic boundary conditions have approximately equal energy conservation characteristics. As mass begins to be ejected from the grid edges, the isolated boundary conditions conserve energy much more poorly, although this is largely expected because of the way particles are handled after leaving the grid range. Specifically, after leaving the grid, (for the isolated BC's) the particles no longer feel any force from the grid bound mass and their gravitational potential potential energy is no longer added into the energy calculation. Energy conservation is plotted in the 3D animations as a percentage of current/initial energy.
+
+### 4)
 
 
