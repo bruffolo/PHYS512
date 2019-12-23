@@ -92,7 +92,8 @@ Adding the switch ```-s``` as a command line argument allows you to save the cal
 
 ## Questions
 
-### 1) Single particles remain motionless in this algorithm. To see this you can run  either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with ```npt=1``` and look at the x, y and z arrays to confirm that they are unchanging in time. A pre-computed data set, in the directory "Data/single" is also provided for this purpose. This data set was taken for 1000 iterations of the integrator at a dt of 1e-3.
+### 1) 
+Single particles remain motionless in this algorithm. To see this you can run  either ```Nparticle_periodic.py``` or ```Nparticle_isolated.py``` with ```npt=1``` and look at the x, y and z arrays to confirm that they are unchanging in time. A pre-computed data set, in the directory "Data/single" is also provided for this purpose. This data set was taken for 1000 iterations of the integrator at a dt of 1e-3.
 
 ### 2) 
 The algorithm employed has good energy conservation properties and does well at maintaining a circular orbit. 
